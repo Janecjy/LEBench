@@ -957,8 +957,8 @@ void send_test(struct timespec *timeArray, int iter, int *i) {
 		if (fd_client < 0) printf("[error] failed to open client socket.\n");
 		retval = connect(fd_client, (struct sockaddr *) &server_addr, sizeof(struct sockaddr_un));
 		if (retval == -1) {
-			perror("[error] failed to connect.\n")
-			exit(1)
+			perror("[error] failed to connect.\n");
+			exit(1);
 		}
 
 		char *buf = (char *) malloc (sizeof(char) * msg_size);
