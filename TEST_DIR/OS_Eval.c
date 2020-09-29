@@ -57,7 +57,7 @@ char *new_output_fn = NULL;
 #define OUTPUT_FN		OUTPUT_FILE_PATH "output_file.csv"
 #define NEW_OUTPUT_FN	OUTPUT_FILE_PATH "new_output_file.csv"
 #define DEBUG false
-#define BASE_ITER 10000
+#define BASE_ITER 1
 
 #define PAGE_SIZE 4096
 
