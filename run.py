@@ -97,11 +97,10 @@ def run_bench():
     print '[INFO] Compiling test ' + TEST_NAME + ".c."
     call(('make -C ' + TEST_DIR).split())
 
-
     result_path = join(RESULT_DIR, kern_version) 
+    print '[INFO] Result path is ' + result_path + '.'
     if not os.path.exists(result_path):
         os.makedirs(result_path)
-
     result_filename = join(RESULT_DIR, kern_version, TEST_NAME)
     result_error_filename = join(RESULT_DIR, kern_version, TEST_NAME + '_err')
 
