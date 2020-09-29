@@ -932,7 +932,7 @@ void send_test(struct timespec *timeArray, int iter, int *i) {
 		write(fds1[1], &w, 1);
 
 		// int fd_connect = accept(fd_server, (struct sockaddr *) &client_addr, &client_addr_len);
-		int fd_connect = accept(fd_server, (struct sockaddr *) 0, (socklen_t *)0);
+		int fd_connect = accept(fd_server, (struct sockaddr *) 0, (socklen_t *) 0);
 		if (DEBUG) printf("Connection accepted.\n");
 
 		read(fds2[0], &r, 1);
@@ -1191,7 +1191,7 @@ int main(int argc, char *argv[])
 	/*****************************************/
 	/*             SEND & RECV               */
 	/*****************************************/
-	msg_size = 1;	
+	/* msg_size = 1;	
 	curr_iter_limit = 50;
 	printf("msg size: %d.\n", msg_size);
 	printf("curr iter limit: %d.\n", curr_iter_limit);
@@ -1214,7 +1214,7 @@ int main(int argc, char *argv[])
 		
 	info.iter = BASE_ITER;
 	info.name = "big recv";
-	one_line_test_v2(fp, copy, recv_test, &info);
+	one_line_test_v2(fp, copy, recv_test, &info); */
 	
 
 	/*****************************************/
