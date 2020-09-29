@@ -904,7 +904,7 @@ void send_test(struct timespec *timeArray, int iter, int *i) {
 	server_addr.sun_family = AF_UNIX;
 	strncpy(server_addr.sun_path, home, sizeof(server_addr.sun_path) - 1); 
 	strncat(server_addr.sun_path, sock, sizeof(server_addr.sun_path) - 1); 
-	printf("[info] server socket address path is" + server_addr.sun_path + ".\n");
+	printf("[info] server socket address path is %s.\n", server_addr.sun_path);
 
 	int forkId = fork();
 
