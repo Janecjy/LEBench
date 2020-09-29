@@ -931,7 +931,8 @@ void send_test(struct timespec *timeArray, int iter, int *i) {
 
 		write(fds1[1], &w, 1);
 
-		int fd_connect = accept(fd_server, (struct sockaddr *) &client_addr, &client_addr_len);
+		// int fd_connect = accept(fd_server, (struct sockaddr *) &client_addr, &client_addr_len);
+		int fd_connect = accept(fd_server, (struct sockaddr *) 0, (socklen_t *)0);
 		if (DEBUG) printf("Connection accepted.\n");
 
 		read(fds2[0], &r, 1);
@@ -1035,7 +1036,8 @@ void recv_test(struct timespec *timeArray, int iter, int *i) {
 
 		write(fds1[1], &w, 1);
 
-		int fd_connect = accept(fd_server, (struct sockaddr *) &client_addr, &client_addr_len);
+		// int fd_connect = accept(fd_server, (struct sockaddr *) &client_addr, &client_addr_len);
+		int fd_connect = accept(fd_server, (struct sockaddr *) 0, (socklen_t *)0);
 		if (DEBUG) printf("Connection accepted.\n");
 
 		read(fds2[0], &r, 1);
