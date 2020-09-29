@@ -16,8 +16,8 @@ WORKING_DIR      = ''
 KERN_INDEX_FILE  = '/iteration' 
 LOCAL_GRUB_FILE  = '/grub'
 KERN_LIST_FILE   = '/kern_list' 
-RESULT_DIR       = '/RESULT_DIR/'
-TEST_DIR         = '/TEST_DIR/'
+RESULT_DIR       = 'RESULT_DIR/'
+TEST_DIR         = 'TEST_DIR/'
 TEST_NAME        = 'OS_Eval'
 
 
@@ -101,6 +101,7 @@ def run_bench():
     print '[INFO] Result path is ' + result_path + '.'
     if not os.path.exists(result_path):
         os.makedirs(result_path)
+        print '[INFO] Make new result directory.'
     result_filename = join(RESULT_DIR, kern_version, TEST_NAME)
     result_error_filename = join(RESULT_DIR, kern_version, TEST_NAME + '_err')
 
@@ -140,6 +141,9 @@ if __name__ == '__main__':
     KERN_LIST_FILE  = WORKING_DIR + KERN_LIST_FILE
     RESULT_DIR      = WORKING_DIR + RESULT_DIR
     TEST_DIR        = WORKING_DIR + TEST_DIR
+    
+    print '[INFO] Result directory: ' + RESULT_DIR + '.'
+    print '[INFO] Test directory: ' + TEST_DIR + '.'
 
     run_bench()
 
