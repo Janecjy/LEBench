@@ -56,8 +56,8 @@ char *new_output_fn = NULL;
 #define OUTPUT_FILE_PATH	""
 #define OUTPUT_FN		OUTPUT_FILE_PATH "output_file.csv"
 #define NEW_OUTPUT_FN	OUTPUT_FILE_PATH "new_output_file.csv"
-#define DEBUG true
-#define BASE_ITER 1
+#define DEBUG false
+#define BASE_ITER 10000
 
 #define PAGE_SIZE 4096
 
@@ -1191,7 +1191,7 @@ int main(int argc, char *argv[])
 	/*****************************************/
 	/*             SEND & RECV               */
 	/*****************************************/
-	/* msg_size = 1;	
+	msg_size = 1;	
 	curr_iter_limit = 50;
 	printf("msg size: %d.\n", msg_size);
 	printf("curr iter limit: %d.\n", curr_iter_limit);
@@ -1214,7 +1214,7 @@ int main(int argc, char *argv[])
 		
 	info.iter = BASE_ITER;
 	info.name = "big recv";
-	one_line_test_v2(fp, copy, recv_test, &info); */
+	one_line_test_v2(fp, copy, recv_test, &info);
 	
 
 	/*****************************************/
@@ -1227,7 +1227,6 @@ int main(int argc, char *argv[])
 	info.iter = BASE_ITER * 5;
 	info.name = "thr create";
 	two_line_test(fp, copy, threadTest, &info);
-
 
 	int page_count = 6000;
 	void *pages[page_count];
